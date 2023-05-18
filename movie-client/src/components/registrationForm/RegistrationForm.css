@@ -1,0 +1,15 @@
+/* Styles for the registration form */
+.submit-btn{
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em
+  }
+  
+  .label{
+    padding-top: 20px;
+  }
+
+  .titlePage{
+    color: gold;
+  }
