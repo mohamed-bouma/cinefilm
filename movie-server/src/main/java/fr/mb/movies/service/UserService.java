@@ -24,11 +24,12 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
-    public User saveUser(User user) {
-        return userRepository.save(user);
-    }
-
-    public void deleteUser(ObjectId userId) {
-        userRepository.deleteById(userId);
+    public User authenticateUser(String email, String password) {
+        User user = userRepository.findByEmail(email);
+        if (user != null && user.getPassword().equals(password)) {
+            return user;
+        } else {
+            return null;
+        }
     }
 }

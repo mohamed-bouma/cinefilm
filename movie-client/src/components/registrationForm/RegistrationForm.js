@@ -6,6 +6,7 @@ import { Button } from '@mui/material';
 import api from "../../api/axiosConfig";
 
 import "./RegistrationForm.css";
+
 function RegistrationForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

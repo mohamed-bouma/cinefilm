@@ -6,7 +6,11 @@ import { Nav } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ isConnected }) => {
+  const handleLogout = () => {
+    // Implémenter la logique de déconnexion ici
+  };
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
@@ -28,14 +32,26 @@ const Header = () => {
               Films à voir
             </NavLink>
           </Nav>
-          <Link to="/LoginForm">
-          <Button variant="outline-info" className="me-2">
-            Connexion
-          </Button>
-          </Link>
-          <Link to="/RegistrationForm">
-            <Button variant="outline-info">Inscription</Button>
-          </Link>
+          {!isConnected && (
+            <div>
+              <Link to="/LoginForm">
+                <Button variant="outline-info" className="me-2">
+                  Connexion
+                </Button>
+              </Link>
+              <Link to="/RegistrationForm">
+                <Button variant="outline-info">Inscription</Button>
+              </Link>
+            </div>
+          )}
+          {isConnected && (
+            <div>
+              <p>Bienvenue, utilisateur connecté !</p>
+              <Button variant="outline-info" onClick={handleLogout}>
+                Déconnexion
+              </Button>
+            </div>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
