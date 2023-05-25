@@ -60,7 +60,6 @@ const Reviews = ({ getMovieData, movie }) => {
 
   const deleteReview = async (reviewId) => {
     try {
-      console.log(JSON.stringify(reviewId));
       const updatedReviews = reviews.filter((r) => r.plainTextId !== reviewId);
 
       await api.delete(`/api/v1/movies/${movieId}/reviews/${reviewId}`);

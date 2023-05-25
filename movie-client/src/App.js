@@ -65,7 +65,6 @@ function App() {
           {/* Ajout de la route pour le formulaire d'inscription */}
           <Route path="/LoginForm" element={<LoginForm />} />{" "}
           {/* Ajout de la route pour le formulaire de connexion */}
-          
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
